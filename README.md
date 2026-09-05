@@ -46,3 +46,7 @@ C'è un solo foglio di stile (css/style.css) poiché la suddivisione semantica n
 L'utente e la lista sono salvati in localStorage che sopravvive alla chiusura di sessione. Come anticipavo, il login è simulato: non c'è alcun server e le credenziali vengono confrontate con l'account demo hardcodato; la password non viene mai salvata.
 
 Il layout è basato su Flexbox (nessuna reale esigenza di usare grid); ho usato una media query a 768px (mantenuta la best practice risalente ad Apple, ma che tutt'ora si fa valere con Bootstrap e Tailwind come convenzione) per il menu e le card. I form sono validati in JavaScript con un messaggio sotto ogni campo. Le card vengono create clonando un template presente nell'HTML.
+
+## WIP
+
+Ho committato anche la cartella con il WIP usato come template di pagina, nella build/zip di deploy ovviamente sarebbe escluso, ma viene tenuto nel repo come assets d'ausilio allo sviluppo.
