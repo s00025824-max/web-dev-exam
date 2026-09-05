@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlante | Il tuo profilo</title>
+  <meta name="description" content="Il tuo profilo su Atlante: dati personali, statistiche di viaggio e ultime destinazioni salvate.">
+  <meta name="keywords" content="profilo, account, statistiche viaggi, Atlante">
+  <meta name="author" content="Massimiliano Longo">
+  <meta name="theme-color" content="#12303F">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/profile.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header>
+    <nav aria-label="Menu principale">
+      <a class="logo" href="index.html">Atlante</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Cerca</a></li>
+        <li><a href="wishlist.html">La mia lista</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+        <li data-auth="guest"><a href="login.html">Accedi</a></li>
+        <li data-auth="user" hidden><a href="profile.html" id="greeting">Profilo</a></li>
+        <li data-auth="user" hidden><button type="button" id="logout">Esci</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="panel" id="guest-section" hidden>
+      <h1>Area riservata</h1>
+      <p>Per vedere il tuo profilo devi <a href="login.html">accedere</a>.</p>
+    </section>
+
+    <section id="profile-section" hidden>
+      <h1>Il tuo profilo</h1>
+
+      <div class="panel row">
+        <span id="avatar" aria-hidden="true"></span>
+        <div>
+          <h2 id="profile-name"></h2>
+          <p id="profile-email"></p>
+          <p id="profile-bio"></p>
+          <p>Su Atlante da <span id="member-since"></span></p>
+        </div>
+      </div>
+
+      <dl class="stats">
+        <div>
+          <dt>Destinazioni salvate</dt>
+          <dd id="stat-saved">0</dd>
+        </div>
+        <div>
+          <dt>Già visitate</dt>
+          <dd id="stat-visited">0</dd>
+        </div>
+        <div>
+          <dt>Da visitare</dt>
+          <dd id="stat-to-visit">0</dd>
+        </div>
+      </dl>
+
+      <section>
+        <h2>Ultime destinazioni salvate</h2>
+        <ul id="recent"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Modifica il profilo</h2>
+        <form id="profile-form" novalidate>
+          <div class="field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" required minlength="2">
+            <small id="name-error"></small>
+          </div>
+
+          <div class="field">
+            <label for="bio">Bio (massimo 160 caratteri)</label>
+            <textarea id="bio" name="bio" rows="3" maxlength="160" aria-describedby="bio-error"></textarea>
+            <small id="bio-error"></small>
+          </div>
+
+          <button type="submit">Salva le modifiche</button>
+        </form>
+      </section>
+
+      <button type="button" class="secondary" id="logout-profile">Esci dall'account</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Atlante è un progetto didattico realizzato con HTML, CSS e JavaScript. Dati meteo e geografici di <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+  </footer>
+</body>
+</html>

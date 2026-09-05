@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlante | Contattaci</title>
+  <meta name="description" content="Scrivi al team di Atlante per suggerimenti o segnalazioni.">
+  <meta name="keywords" content="contatti, supporto, suggerimenti, Atlante">
+  <meta name="author" content="Massimiliano Longo">
+  <meta name="theme-color" content="#12303F">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/contact.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header>
+    <nav aria-label="Menu principale">
+      <a class="logo" href="index.html">Atlante</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Cerca</a></li>
+        <li><a href="wishlist.html">La mia lista</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+        <li data-auth="guest"><a href="login.html">Accedi</a></li>
+        <li data-auth="user" hidden><a href="profile.html" id="greeting">Profilo</a></li>
+        <li data-auth="user" hidden><button type="button" id="logout">Esci</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="narrow">
+    <h1>Contattaci</h1>
+    <p>Hai un suggerimento o hai trovato un errore? Scrivici: rispondiamo entro due giorni lavorativi.</p>
+
+    <form id="contact-form" class="panel" novalidate>
+      <div class="field">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" required minlength="2">
+        <small id="name-error"></small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+        <small id="email-error"></small>
+      </div>
+
+      <div class="field">
+        <label for="topic">Motivo</label>
+        <select id="topic" name="topic" aria-describedby="topic-error" required>
+          <option value="">Scegli un motivo</option>
+          <option value="suggerimento">Suggerimento</option>
+          <option value="errore">Segnalazione di un errore</option>
+          <option value="altro">Altro</option>
+        </select>
+        <small id="topic-error"></small>
+      </div>
+
+      <div class="field">
+        <label for="message">Messaggio <span id="counter">(0/300)</span></label>
+        <textarea id="message" name="message" rows="5" maxlength="300" aria-describedby="message-error" required minlength="20"></textarea>
+        <small id="message-error"></small>
+      </div>
+
+      <div class="field">
+        <label><input type="checkbox" id="privacy" name="privacy" aria-describedby="privacy-error" required> Ho letto l'informativa sulla privacy</label>
+        <small id="privacy-error"></small>
+      </div>
+
+      <button type="submit">Invia il messaggio</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Atlante è un progetto didattico realizzato con HTML, CSS e JavaScript. Dati meteo e geografici di <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+  </footer>
+</body>
+</html>

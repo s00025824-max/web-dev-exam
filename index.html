@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlante | Segna dove vuoi andare</title>
+  <meta name="description" content="Atlante è la tua lista di viaggi personale: cerca una città, salvala e scopri che tempo fa laggiù in questo momento.">
+  <meta name="keywords" content="viaggi, destinazioni, lista viaggi, meteo, città">
+  <meta name="author" content="Massimiliano Longo">
+  <meta name="theme-color" content="#12303F">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header>
+    <nav aria-label="Menu principale">
+      <a class="logo" href="index.html">Atlante</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Cerca</a></li>
+        <li><a href="wishlist.html">La mia lista</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+        <li data-auth="guest"><a href="login.html">Accedi</a></li>
+        <li data-auth="user" hidden><a href="profile.html" id="greeting">Profilo</a></li>
+        <li data-auth="user" hidden><button type="button" id="logout">Esci</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div>
+        <h1>Il mondo, una destinazione alla volta.</h1>
+        <p>Cerca una città, salvala nella tua lista e scopri che tempo fa laggiù in questo momento.</p>
+        <div class="row">
+          <a class="button" href="explore.html">Cerca una destinazione</a>
+          <a class="button secondary" href="login.html" id="hero-cta">Accedi</a>
+        </div>
+      </div>
+
+      <article class="card" id="live-card">
+        <header>
+          <img alt="">
+          <div>
+            <h2>Cerco una destinazione</h2>
+            <p data-field="country"></p>
+          </div>
+        </header>
+        <p data-field="temperature"></p>
+        <p data-field="weather"></p>
+        <p>Ora locale: <span data-field="time"></span></p>
+        <p id="live-status" role="status"></p>
+        <button type="button" id="another">Un'altra destinazione</button>
+      </article>
+    </section>
+
+    <section>
+      <h2>Come funziona</h2>
+      <ol class="steps">
+        <li>
+          <h3>Cerca</h3>
+          <p>Digita il nome di una città e scegli il luogo giusto tra i risultati.</p>
+        </li>
+        <li>
+          <h3>Salva</h3>
+          <p>Aggiungi la destinazione alla tua lista personale, sempre a portata di mano.</p>
+        </li>
+        <li>
+          <h3>Parti</h3>
+          <p>Controlla il meteo in tempo reale e segna le mete che hai già visitato.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Atlante è un progetto didattico realizzato con HTML, CSS e JavaScript. Dati meteo e geografici di <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+  </footer>
+</body>
+</html>

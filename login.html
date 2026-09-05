@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlante | Accedi</title>
+  <meta name="description" content="Accedi ad Atlante per salvare le tue destinazioni e gestire il tuo profilo.">
+  <meta name="keywords" content="accesso, login, Atlante, viaggi">
+  <meta name="author" content="Massimiliano Longo">
+  <meta name="theme-color" content="#12303F">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/login.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header>
+    <nav aria-label="Menu principale">
+      <a class="logo" href="index.html">Atlante</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Cerca</a></li>
+        <li><a href="wishlist.html">La mia lista</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+        <li data-auth="guest"><a href="login.html">Accedi</a></li>
+        <li data-auth="user" hidden><a href="profile.html" id="greeting">Profilo</a></li>
+        <li data-auth="user" hidden><button type="button" id="logout">Esci</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="narrow">
+    <section class="panel" id="login-section">
+      <h1>Accedi</h1>
+      <p>Per provare l'app usa l'account demo: <strong>demo@epicode-exam.it</strong> con password <strong>Esame-Superato!4SURE</strong>.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+          <small id="email-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" aria-describedby="password-error" required minlength="6">
+          <small id="password-error"></small>
+        </div>
+
+        <div class="row">
+          <button type="submit">Entra</button>
+          <button type="button" class="secondary" id="fill-demo">Compila con l'account demo</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel" id="logged-section" hidden>
+      <h1>Sei già connesso</h1>
+      <p>Ciao <span id="logged-name"></span>, vai al tuo <a href="profile.html">profilo</a> oppure esci dal menu in alto.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Atlante è un progetto didattico realizzato con HTML, CSS e JavaScript. Dati meteo e geografici di <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+  </footer>
+</body>
+</html>
